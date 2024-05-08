@@ -1,176 +1,156 @@
 .main{
-    min-height: 100vh;
     flex: 1;
+    min-height: 100vh;
     padding-bottom: 15vh;
     position: relative;
-
 }
-
 .main .nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: #585858;
     font-size: 22px;
     padding: 20px;
+    color: #585858;
 }
-
 .main .nav img{
     width: 40px;
-    border-radius: 50%;
+    border-radius: 50px;
 }
-
 .main-container{
     max-width: 900px;
     margin: auto;
 }
-
-.main .greet{
-    padding: 10px;
-    font-weight: 500;
-    font-size: 56px;
-    color: #c4c5c7;
+.main-container .greet{
     margin: 50px 0px;
+    font-size: 56px;
+    color:#c4c7c5;
+    font-weight: 500px;
 }
-
 .main .greet span{
-    background: -webkit-linear-gradient(16deg,#4285f4,#d96570);
+    background: -webkit-linear-gradient(16deg,#4b90ff,#ff5546);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .main .cards{
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(180px,1fr));
+    gap: 15px;
 }
 .main .card{
-    background-color: #f0f4f9;
     height: 200px;
-    padding: 10px;
+    padding: 15px;
+    background-color: #f0f4f9;
     border-radius: 10px;
     position: relative;
+    cursor: pointer;
 }
-
-.main .card p{
-    color: #585858;
-    font-size: 17px;    
-}
-
 .main .card img{
-    position: absolute;
-    padding: 10px;
-    background-color: #fff;
-    border-radius: 50%;
     width: 35px;
+    padding: 5px;
+    position: absolute;
+    border-radius: 20px;
     bottom: 10px;
     right: 10px;
+    background: white;
+}
+.main .card p{
+    color: #585858;
+    font-size: 17px;
 }
 .main .card:hover{
     background-color: #dfe4ea;
 }
-
-.main .main-bottom{
+.main-bottom {
+    position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 0 20px;
-    max-width: 960px;
+    max-width: 900px;
+    padding: 0px 20px;
     margin: auto;
-    position: absolute;
 }
-
 .search-box{
-   
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
     background-color: #f0f4f9;
     padding: 10px 20px;
     border-radius: 50px;
-   
 }
 .search-box img{
     width: 24px;
+    cursor: pointer;
 }
-.main-bottom p{
-    color: #585858;
-    margin: 10px 0px;
-    text-align: center;
-    font-size: 12px;
-
+.search-box input{
+    flex: 1;
+    background: transparent;
+    border: 0;
+    outline: 0;
+    padding: 8px;
+    font-size: 18px;
 }
 .search-box div{
     display: flex;
     align-items: center;
-    gap:10px;
+    gap: 15px;
 }
-
-.search-box input{
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 16px;
-    padding: 8px;
-    background-color: transparent;
+.main .bottom-info{
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
 }
-
-.result-container{
+.result{
+    padding: 0px 5%;
     max-height: 70vh;
     overflow-y: scroll;
-    padding: 0px 5%;
-
 }
-
-.result-container::-webkit-scrollbar{
+.result::-webkit-scrollbar{
     display: none;
 }
-
 .result-title{
     margin: 40px 0px;
     display: flex;
     align-items: center;
     gap: 20px;
 }
-
-.result-title img{
-    width: 40px;  
-    border-radius: 50%; 
+.result img{
+    width: 40px;
+    border-radius: 50px;
 }
 .result-data{
-  
     display: flex;
     align-items: start;
     gap: 20px;
 }
-
 .loader{
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
 }
 .loader hr{
-    width: 100%;
-    border-radius: 4px;
-    border: none;
-    background-color: #f6f7f8;
-    background: linear-gradient(to right,#9ed7ff,#ffffff,#9ed7ff);
-    background-size: 800px 50px;
-    height: 20px;
-    animation: loader 2s infinite linear;
-}
-.result-data p{
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 1.8;
+border-radius: 4px;
+border: none;
+background-color: #f6f7f8;
+background: linear-gradient(to right,#b1d5ee,#c953e98a,#9ed7ff);
+background-size: 800px 50px;
+height: 20px;
+animation: loader 4s infinite linear;
 }
 
-@keyframes loader {
+@keyframes loader{
     0%{
-        background-position: -100px 0px ;
+        background-position: -800px 0px;
+
     }
     100%{
         background-position: 800px 0px;
     }
+}
+
+.result-data p{
+    font-size: 17px;
+    font-weight: 300px;
+    line-height: 1.8;
 }
